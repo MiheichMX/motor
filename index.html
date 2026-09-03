@@ -152,13 +152,12 @@
   
   /* HERO */
   .hero {
-    padding: 80px 0 60px;
+    padding: 100px 0 80px;
     background: 
-      radial-gradient(ellipse at top right, rgba(245, 166, 35, 0.08), transparent 60%),
-      radial-gradient(ellipse at bottom left, rgba(245, 166, 35, 0.05), transparent 60%),
-      var(--bg-primary);
+      linear-gradient(rgba(10, 14, 26, 0.7), rgba(10, 14, 26, 0.9)),
+      url('images/hero-bg.jpg') center/cover no-repeat;
     position: relative;
-    overflow: hidden;
+    text-align: center;
   }
   
   .hero::before {
@@ -172,11 +171,10 @@
     opacity: 0.3;
   }
   
-  .hero-content {
-    display: grid;
-    grid-template-columns: 1.2fr 1fr;
-    gap: 50px;
-    align-items: center;
+  .hero-suv {
+    max-width: 800px;
+    margin: 0 auto 40px;
+    display: block;
   }
   
   .hero-text .badge {
@@ -206,67 +204,49 @@
     font-size: 18px;
     color: var(--text-secondary);
     margin-bottom: 30px;
-    max-width: 550px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
   }
   
   .hero-actions {
     display: flex;
     gap: 15px;
+    justify-content: center;
     flex-wrap: wrap;
   }
   
-  .hero-image {
-    position: relative;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 30px;
-    text-align: center;
-  }
-  
-  .hero-image::before {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: 16px;
-    padding: 1px;
-    background: linear-gradient(135deg, var(--accent), transparent 50%);
-    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-    -webkit-mask-composite: xor;
-    mask-composite: exclude;
-  }
-  
   .hero-stats {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 50px;
+    flex-wrap: wrap;
   }
   
   .stat {
     background: var(--bg-card);
     border: 1px solid var(--border);
     border-radius: 12px;
-    padding: 20px;
+    padding: 25px 35px;
     text-align: center;
   }
   
   .stat .number {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 800;
     color: var(--accent);
     display: block;
   }
   
   .stat .label {
-    font-size: 13px;
+    font-size: 14px;
     color: var(--text-secondary);
     margin-top: 5px;
   }
   
-  /* SERVICES */
-  .services {
+  /* QUIZ */
+  .quiz {
     padding: 80px 0;
     background: var(--bg-secondary);
   }
@@ -293,113 +273,6 @@
     background: var(--accent);
     margin: 15px auto;
     border-radius: 2px;
-  }
-  
-  .brands-tabs {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    flex-wrap: wrap;
-    margin-bottom: 40px;
-  }
-  
-  .brand-tab {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    color: var(--text-secondary);
-    padding: 10px 20px;
-    border-radius: 8px;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    transition: all 0.3s;
-  }
-  
-  .brand-tab:hover, .brand-tab.active {
-    background: var(--accent);
-    color: var(--bg-primary);
-    border-color: var(--accent);
-  }
-  
-  .services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-    gap: 25px;
-  }
-  
-  .service-card {
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 30px;
-    transition: all 0.3s;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .service-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 3px;
-    background: var(--accent);
-    transform: scaleX(0);
-    transition: transform 0.3s;
-  }
-  
-  .service-card:hover {
-    transform: translateY(-5px);
-    border-color: var(--border-accent);
-    background: var(--bg-card-hover);
-  }
-  
-  .service-card:hover::before {
-    transform: scaleX(1);
-  }
-  
-  .service-card .brand {
-    color: var(--accent);
-    font-size: 13px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 10px;
-  }
-  
-  .service-card h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-    font-weight: 700;
-  }
-  
-  .service-card .problem {
-    color: var(--text-secondary);
-    font-size: 14px;
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid var(--border);
-  }
-  
-  .service-card .solution-label {
-    color: var(--accent);
-    font-size: 12px;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-  }
-  
-  .service-card .solution {
-    font-size: 14px;
-    color: var(--text-primary);
-  }
-  
-  /* QUIZ */
-  .quiz {
-    padding: 80px 0;
-    background: var(--bg-primary);
   }
   
   .quiz-container {
@@ -562,6 +435,89 @@
     color: var(--accent);
   }
   
+  /* SERVICES */
+  .services {
+    padding: 80px 0;
+    background: var(--bg-primary);
+  }
+  
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+  }
+  
+  .service-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s;
+  }
+  
+  .service-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--border-accent);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  }
+  
+  .service-card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+  }
+  
+  .service-card-content {
+    padding: 25px;
+  }
+  
+  .service-card .brand {
+    display: inline-block;
+    background: rgba(245, 166, 35, 0.15);
+    color: var(--accent);
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  
+  .service-card .engine {
+    color: var(--text-muted);
+    font-size: 13px;
+    margin-bottom: 10px;
+  }
+  
+  .service-card h3 {
+    font-size: 20px;
+    margin-bottom: 12px;
+    font-weight: 700;
+  }
+  
+  .service-card .problem {
+    color: var(--text-secondary);
+    font-size: 14px;
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid var(--border);
+  }
+  
+  .service-card .solution-label {
+    color: var(--accent);
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+  }
+  
+  .service-card .solution {
+    font-size: 14px;
+    color: var(--text-primary);
+  }
+  
   /* TRUST */
   .trust {
     padding: 80px 0;
@@ -581,7 +537,6 @@
     padding: 30px;
     text-align: center;
     transition: all 0.3s;
-    position: relative;
   }
   
   .trust-card:hover {
@@ -790,7 +745,6 @@
   
   /* RESPONSIVE */
   @media (max-width: 768px) {
-    .hero-content { grid-template-columns: 1fr; }
     .hero-text h2 { font-size: 32px; }
     .contacts-grid { grid-template-columns: 1fr; }
     .footer-grid { grid-template-columns: 1fr; }
@@ -798,6 +752,7 @@
     .header-phone { width: 100%; justify-content: center; }
     .quiz-container { padding: 25px; }
     .section-title h2 { font-size: 28px; }
+    .services-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -831,96 +786,24 @@
 <!-- HERO -->
 <section class="hero">
   <div class="container">
-    <div class="hero-content">
-      <div class="hero-text">
-        <span class="badge">Специализированный сервис в черте г. Истра</span>
-        <h2>Капитальный ремонт <span>двигателей премиум-авто</span></h2>
-        <p>Гильзовка и ремонт ДВС с гарантией 1 год. Устраняем задиры, провернутые вкладыши и обрывы цепей ГРМ. Организуем доставку авто в сервис (БЕСПЛАТНО при ремонте).</p>
-        <div class="hero-actions">
-          <a href="#quiz-block" class="btn btn-large">Рассчитать смету ремонта</a>
-          <a href="#services" class="btn btn-outline btn-large">Болячки моторов</a>
-        </div>
-      </div>
-      <div class="hero-image">
-        <div class="hero-stats">
-          <div class="stat">
-            <span class="number">10+</span>
-            <span class="label">Лет опыта узкой работы с премиальными ДВС</span>
-          </div>
-          <div class="stat">
-            <span class="number">1 год</span>
-            <span class="label">Гарантии без ограничения пробега</span>
-          </div>
-        </div>
+    <img src="images/hero-suv.jpg" alt="Внедорожник премиум-класса" class="hero-suv">
+    <div class="hero-text">
+      <span class="badge">Специализированный сервис в черте г. Истра</span>
+      <h2>Капитальный ремонт <span>двигателей премиум-авто</span></h2>
+      <p>Гильзовка и ремонт ДВС с гарантией 1 год. Устраняем задиры, провернутые вкладыши и обрывы цепей ГРМ. Организуем доставку авто в сервис (БЕСПЛАТНО при ремонте).</p>
+      <div class="hero-actions">
+        <a href="#quiz-block" class="btn btn-large">Рассчитать смету ремонта</a>
+        <a href="#services" class="btn btn-outline btn-large">Болячки моторов</a>
       </div>
     </div>
-  </div>
-</section>
-
-<!-- SERVICES -->
-<section class="services" id="services">
-  <div class="container">
-    <div class="section-title">
-      <h2>С чем к нам приезжают</h2>
-      <div class="accent-line"></div>
-      <p>Типовые неисправности и их решение. Знаем все заводские болячки премиальных двигателей. Не просто перебираем запчасти, а модернизируем узлы.</p>
-    </div>
-    
-    <div class="brands-tabs">
-      <div class="brand-tab active">Land Rover / Jaguar</div>
-      <div class="brand-tab">BMW / Mini</div>
-      <div class="brand-tab">Mercedes-Benz</div>
-      <div class="brand-tab">Porsche</div>
-      <div class="brand-tab">Toyota / Lexus</div>
-    </div>
-    
-    <div class="services-grid">
-      <div class="service-card">
-        <div class="brand">Land Rover / Jaguar</div>
-        <h3>2.7 & 3.0 TDV6 / SDV6</h3>
-        <p class="problem">Проворот вкладышей и поломка коленвала. Из-за масляного голодания или разжижения топлива вал заклинивает, проворачивает вкладыши и ломает коленвал пополам.</p>
-        <div class="solution-label">Решение:</div>
-        <p class="solution">Установка коленвала, ремонт постели блока, замковые вкладыши и модернизированный маслонасос.</p>
+    <div class="hero-stats">
+      <div class="stat">
+        <span class="number">10+</span>
+        <span class="label">Лет опыта узкой работы с премиальными ДВС</span>
       </div>
-      
-      <div class="service-card">
-        <div class="brand">Land Rover / Jaguar</div>
-        <h3>5.0 V8 Supercharged</h3>
-        <p class="problem">Растяжение цепей ГРМ и носок компрессора. Натяжители изнашиваются, цепь начинает греметь. При перескоке гнет клапана. В компрессоре изнашивается изолирующий носок.</p>
-        <div class="solution-label">Решение:</div>
-        <p class="solution">Замена ГРМ комплектом последнего поколения, ревизия муфт VVT и нагнетателя.</p>
-      </div>
-      
-      <div class="service-card">
-        <div class="brand">Land Rover / Jaguar</div>
-        <h3>2.0 Ingenium (Дизель/Бензин)</h3>
-        <p class="problem">Обрыв цепи ГРМ (цепь сзади со стороны КПП). Цепи вытягиваются уже на 70–90 тыс. км. Появляется гул балансирных валов. Требуется демонтаж мотора для замены.</p>
-        <div class="solution-label">Решение:</div>
-        <p class="solution">Замена привода ГРМ со съемом ДВС/КПП, замена балансирных валов и турбин.</p>
-      </div>
-      
-      <div class="service-card">
-        <div class="brand">BMW / Mini</div>
-        <h3>4.4 V8 N63 / S63</h3>
-        <p class="problem">Жор масла, перегрев и проворот вкладышей. Горячий развал блока разрушает маслосъемные колпачки. Начинается сильный расход масла и износ поршневой группы.</p>
-        <div class="solution-label">Решение:</div>
-        <p class="solution">Капитальный ремонт, гильзовка блока, замена колпачков, установка «холодного» термостата.</p>
-      </div>
-      
-      <div class="service-card">
-        <div class="brand">Mercedes-Benz</div>
-        <h3>V8 BiTurbo M278 / M157</h3>
-        <p class="problem">Задиры в цилиндрах и стук фазорегуляторов. Разрушается алюсиловое покрытие стенок цилиндров, мотор начинает стучать. Изнашиваются импульсные диски и муфты.</p>
-        <div class="solution-label">Решение:</div>
-        <p class="solution">Качественная гильзовка чугунными гильзами, новые поршни, замена муфт распредвалов.</p>
-      </div>
-      
-      <div class="service-card">
-        <div class="brand">Toyota / Lexus</div>
-        <h3>4.5 V8 D-4D (LC200 / LX450d)</h3>
-        <p class="problem">Прогар поршней и трещины коленвала. Перелив форсунок и забитый ЕГР приводят к перегреву поршня, прогару и образованию глубоких задиров в цилиндре.</p>
-        <div class="solution-label">Решение:</div>
-        <p class="solution">Расточка/гильзовка блока, замена поршневой группы, проверка форсунок на стенде.</p>
+      <div class="stat">
+        <span class="number">1 год</span>
+        <span class="label">Гарантии без ограничения пробега</span>
       </div>
     </div>
   </div>
@@ -1021,6 +904,91 @@
   </div>
 </section>
 
+<!-- SERVICES -->
+<section class="services" id="services">
+  <div class="container">
+    <div class="section-title">
+      <h2>С чем к нам приезжают</h2>
+      <div class="accent-line"></div>
+      <p>Типовые неисправности и их решение. Знаем все заводские болячки премиальных двигателей. Не просто перебираем запчасти, а модернизируем узлы.</p>
+    </div>
+    
+    <div class="services-grid">
+      <div class="service-card">
+        <img src="images/jlr-30.jpg" alt="Land Rover 3.0 TDV6">
+        <div class="service-card-content">
+          <span class="brand">Land Rover / Jaguar</span>
+          <div class="engine">2.7 & 3.0 TDV6 / SDV6</div>
+          <h3>Проворот вкладышей и поломка коленвала</h3>
+          <p class="problem">Из-за масляного голодания или разжижения топлива вал заклинивает, проворачивает вкладыши и ломает коленвал пополам.</p>
+          <div class="solution-label">Решение:</div>
+          <p class="solution">Установка коленвала, ремонт постели блока, замковые вкладыши и модернизированный маслонасос.</p>
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <img src="images/jlr-50.jpg" alt="Land Rover 5.0 V8">
+        <div class="service-card-content">
+          <span class="brand">Land Rover / Jaguar</span>
+          <div class="engine">5.0 V8 Supercharged</div>
+          <h3>Растяжение цепей ГРМ и носок компрессора</h3>
+          <p class="problem">Натяжители изнашиваются, цепь начинает греметь. При перескоке гнет клапана. В компрессоре изнашивается изолирующий носок.</p>
+          <div class="solution-label">Решение:</div>
+          <p class="solution">Замена ГРМ комплектом последнего поколения, ревизия муфт VVT и нагнетателя.</p>
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <img src="images/jlr-20.jpg" alt="Land Rover 2.0 Ingenium">
+        <div class="service-card-content">
+          <span class="brand">Land Rover / Jaguar</span>
+          <div class="engine">2.0 Ingenium (Дизель/Бензин)</div>
+          <h3>Обрыв цепи ГРМ (цепь сзади со стороны КПП)</h3>
+          <p class="problem">Цепи вытягиваются уже на 70–90 тыс. км. Появляется гул балансирных валов. Требуется демонтаж мотора для замены.</p>
+          <div class="solution-label">Решение:</div>
+          <p class="solution">Замена привода ГРМ со съемом ДВС/КПП, замена балансирных валов и турбин.</p>
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <img src="images/bmw-n63.jpg" alt="BMW N63">
+        <div class="service-card-content">
+          <span class="brand">BMW / Mini</span>
+          <div class="engine">4.4 V8 N63 / S63</div>
+          <h3>Жор масла, перегрев и проворот вкладышей</h3>
+          <p class="problem">Горячий развал блока разрушает маслосъемные колпачки. Начинается сильный расход масла и износ поршневой группы.</p>
+          <div class="solution-label">Решение:</div>
+          <p class="solution">Капитальный ремонт, гильзовка блока, замена колпачков, установка «холодного» термостата.</p>
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <img src="images/mb-m278.jpg" alt="Mercedes M278">
+        <div class="service-card-content">
+          <span class="brand">Mercedes-Benz</span>
+          <div class="engine">V8 BiTurbo M278 / M157</div>
+          <h3>Задиры в цилиндрах и стук фазорегуляторов</h3>
+          <p class="problem">Разрушается алюсиловое покрытие стенок цилиндров, мотор начинает стучать. Изнашиваются импульсные диски и муфты.</p>
+          <div class="solution-label">Решение:</div>
+          <p class="solution">Качественная гильзовка чугунными гильзами, новые поршни, замена муфт распредвалов.</p>
+        </div>
+      </div>
+      
+      <div class="service-card">
+        <img src="images/toyota-1vd.jpg" alt="Toyota 1VD">
+        <div class="service-card-content">
+          <span class="brand">Toyota / Lexus</span>
+          <div class="engine">4.5 V8 D-4D (LC200 / LX450d)</div>
+          <h3>Прогар поршней и трещины коленвала</h3>
+          <p class="problem">Перелив форсунок и забитый ЕГР приводят к перегреву поршня, прогару и образованию глубоких задиров в цилиндре.</p>
+          <div class="solution-label">Решение:</div>
+          <p class="solution">Расточка/гильзовка блока, замена поршневой группы, проверка форсунок на стенде.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- TRUST -->
 <section class="trust" id="trust">
   <div class="container">
@@ -1079,7 +1047,7 @@
       </div>
       
       <div class="contact-map">
-        <div class="map-icon"></div>
+        <div class="map-icon">📍</div>
         <h3>Удобный заезд</h3>
         <p style="color: var(--text-secondary); margin-top: 10px;">Новая Рига и Волоколамское шоссе</p>
         <p style="color: var(--text-secondary);">г. Истра, ул. Московская, д. 42</p>
@@ -1135,7 +1103,6 @@
   const quizData = {};
   let currentStep = 1;
   
-  // Quiz options selection
   document.querySelectorAll('.quiz-option').forEach(option => {
     option.addEventListener('click', function() {
       const siblings = this.parentElement.querySelectorAll('.quiz-option');
@@ -1143,14 +1110,6 @@
       this.classList.add('selected');
       const step = this.closest('.quiz-step').dataset.step;
       quizData['step' + step] = this.dataset.value;
-    });
-  });
-  
-  // Brand tabs
-  document.querySelectorAll('.brand-tab').forEach(tab => {
-    tab.addEventListener('click', function() {
-      document.querySelectorAll('.brand-tab').forEach(t => t.classList.remove('active'));
-      this.classList.add('active');
     });
   });
   
