@@ -920,84 +920,13 @@
 <section class="services" id="services">
   <div class="container">
     <div class="section-title">
-      <h2>С чем к нам приезжают</h2>
+      <h2 id="services-title">С чем к нам приезжают</h2>
       <div class="accent-line"></div>
-      <p>Типовые неисправности и их решение. Знаем все заводские болячки дизельных двигателей. Не просто перебираем запчасти, а модернизируем узлы.</p>
+      <p id="services-subtitle">Типовые неисправности и их решение. Знаем все заводские болячки. Не просто перебираем запчасти, а модернизируем узлы.</p>
     </div>
     
-    <div class="services-grid">
-      <div class="service-card">
-        <img src="images/jlr-30.jpg" alt="Land Rover 3.0 TDV6">
-        <div class="service-card-content">
-          <span class="brand">Land Rover / Jaguar</span>
-          <div class="engine">2.7 & 3.0 TDV6 / SDV6</div>
-          <h3>Проворот вкладышей и поломка коленвала</h3>
-          <p class="problem">Из-за масляного голодания или разжижения топлива вал заклинивает, проворачивает вкладыши и ломает коленвал пополам.</p>
-          <div class="solution-label">Решение:</div>
-          <p class="solution">Установка коленвала, ремонт постели блока, замковые вкладыши и модернизированный маслонасос.</p>
-        </div>
-      </div>
-      
-      <div class="service-card">
-        <img src="images/jlr-50.jpg" alt="Land Rover 5.0 V8">
-        <div class="service-card-content">
-          <span class="brand">Land Rover / Jaguar</span>
-          <div class="engine">5.0 V8 Supercharged</div>
-          <h3>Растяжение цепей ГРМ и носок компрессора</h3>
-          <p class="problem">Натяжители изнашиваются, цепь начинает греметь. При перескоке гнет клапана. В компрессоре изнашивается изолирующий носок.</p>
-          <div class="solution-label">Решение:</div>
-          <p class="solution">Замена ГРМ комплектом последнего поколения, ревизия муфт VVT и нагнетателя.</p>
-        </div>
-      </div>
-      
-      <div class="service-card">
-        <img src="images/jlr-20.jpg" alt="Land Rover 2.0 Ingenium">
-        <div class="service-card-content">
-          <span class="brand">Land Rover / Jaguar</span>
-          <div class="engine">2.0 Ingenium (Дизель/Бензин)</div>
-          <h3>Обрыв цепи ГРМ (цепь сзади со стороны КПП)</h3>
-          <p class="problem">Цепи вытягиваются уже на 70–90 тыс. км. Появляется гул балансирных валов. Требуется демонтаж мотора для замены.</p>
-          <div class="solution-label">Решение:</div>
-          <p class="solution">Замена привода ГРМ со съемом ДВС/КПП, замена балансирных валов и турбин.</p>
-        </div>
-      </div>
-      
-      <div class="service-card">
-        <img src="images/bmw-n63.jpg" alt="BMW N63">
-        <div class="service-card-content">
-          <span class="brand">BMW / Mini</span>
-          <div class="engine">4.4 V8 N63 / S63</div>
-          <h3>Жор масла, перегрев и проворот вкладышей</h3>
-          <p class="problem">Горячий развал блока разрушает маслосъемные колпачки. Начинается сильный расход масла и износ поршневой группы.</p>
-          <div class="solution-label">Решение:</div>
-          <p class="solution">Капитальный ремонт, гильзовка блока, замена колпачков, установка «холодного» термостата.</p>
-        </div>
-      </div>
-      
-      <div class="service-card">
-        <img src="images/mb-m278.jpg" alt="Mercedes M278">
-        <div class="service-card-content">
-          <span class="brand">Mercedes-Benz</span>
-          <div class="engine">V8 BiTurbo M278 / M157</div>
-          <h3>Задиры в цилиндрах и стук фазорегуляторов</h3>
-          <p class="problem">Разрушается алюсиловое покрытие стенок цилиндров, мотор начинает стучать. Изнашиваются импульсные диски и муфты.</p>
-          <div class="solution-label">Решение:</div>
-          <p class="solution">Качественная гильзовка чугунными гильзами, новые поршни, замена муфт распредвалов.</p>
-        </div>
-      </div>
-      
-      <div class="service-card">
-        <img src="images/toyota-1vd.jpg" alt="Toyota 1VD">
-        <div class="service-card-content">
-          <span class="brand">Toyota / Lexus</span>
-          <div class="engine">4.5 V8 D-4D (LC200 / LX450d)</div>
-          <h3>Прогар поршней и трещины коленвала</h3>
-          <p class="problem">Перелив форсунок и забитый ЕГР приводят к перегреву поршня, прогару и образованию глубоких задиров в цилиндре.</p>
-          <div class="solution-label">Решение:</div>
-          <p class="solution">Расточка/гильзовка блока, замена поршневой группы, проверка форсунок на стенде.</p>
-        </div>
-      </div>
-    </div>
+    <!-- Сюда наш умный скрипт будет сам подставлять нужные карточки -->
+    <div class="services-grid" id="services-grid"></div>
   </div>
 </section>
 
@@ -1112,6 +1041,147 @@
 </div>
 
 <script>
+  // --- 1. БАЗА ДАННЫХ МУЛЬТИЛЕНДИНГА ---
+  const brandData = {
+    "jlr": {
+      brandName: "Land Rover / Jaguar",
+      heroTitle: "Капитальный ремонт <span>двигателей Land Rover и Jaguar</span>",
+      heroSubtitle: "Специализация: 2.7, 3.0 TDV6/SDV6, 5.0 V8 SC и 2.0 Ingenium. Устраняем последствия проворота вкладышей и обрывов цепей ГРМ.",
+      bgImage: "images/jlr/hero-jlr.jpg",
+      accent: "#059669",
+      cards: [
+        { img: "images/jlr/card-jlr-tdv6.jpg", engine: "2.7 & 3.0 TDV6/SDV6", title: "Проворот вкладышей и поломка коленвала", problem: "Из-за масляного голодания вал заклинивает, проворачивает вкладыши и ломает коленвал.", solution: "Установка коленвала, ремонт постели блока, замковые вкладыши." },
+        { img: "images/jlr/card-jlr-v8.jpg", engine: "5.0 V8 Supercharged", title: "Растяжение цепей ГРМ и носок компрессора", problem: "Натяжители изнашиваются, цепь начинает греметь. При перескоке гнет клапана.", solution: "Замена ГРМ комплектом последнего поколения, ревизия муфт VVT." },
+        { img: "images/jlr/card-jlr-ingenium.jpg", engine: "2.0 Ingenium", title: "Обрыв цепи ГРМ (сзади со стороны КПП)", problem: "Цепи вытягиваются уже на 70–90 тыс. км. Появляется гул балансирных валов.", solution: "Замена привода ГРМ со съемом ДВС/КПП, замена балансирных валов." }
+      ]
+    },
+    "mercedes": {
+      brandName: "Mercedes-Benz",
+      heroTitle: "Капитальный ремонт <span>двигателей Mercedes-Benz</span>",
+      heroSubtitle: "Специализация: M278, M157, M274, OM642, OM651. Профессиональная гильзовка и устранение задиров.",
+      bgImage: "images/mercedes/hero-mercedes.jpg",
+      accent: "#3b82f6",
+      cards: [
+        { img: "images/mercedes/card-mb-v8.jpg", engine: "M278 4.7 V8 / M157 5.5 V8", title: "Задиры в цилиндрах", problem: "Разрушается алюсиловое покрытие стенок цилиндров, мотор начинает стучать, жрет масло.", solution: "Гильзовка чугунными гильзами, новые поршни, замена муфт." },
+        { img: "images/mercedes/card-mb-m274.jpg", engine: "M274 2.0 Бензин", title: "Стук фазорегуляторов", problem: "Треск при запуске на холодную, износ звезд и растяжение цепи.", solution: "Замена комплекта ГРМ и муфт распредвалов." },
+        { img: "images/mercedes/card-mb-diesel.jpg", engine: "OM642 / OM651 Дизель", title: "Вихревые заслонки и форсунки", problem: "Падение мощности, разрушение заслонок впускного коллектора, проблемы с пьезофорсунками.", solution: "Ревизия коллектора, удаление/замена заслонок, ремонт топливной." }
+      ]
+    },
+    "bmw": {
+      brandName: "BMW",
+      heroTitle: "Капитальный ремонт <span>двигателей BMW</span>",
+      heroSubtitle: "Специализация: N63, S63, N57, B57, N20, B48. Устраняем задиры, жор масла и проблемы с цепями.",
+      bgImage: "images/bmw/hero-bmw.jpg",
+      accent: "#2563eb", 
+      cards: [
+        { img: "images/bmw/card-bmw-v8.jpg", engine: "N63 / S63 4.4 V8", title: "Жор масла и перегрев", problem: "Горячий развал блока разрушает маслосъемные колпачки. Начинается расход масла и задиры.", solution: "Капитальный ремонт, гильзовка, холодный термостат." },
+        { img: "images/bmw/card-bmw-diesel.jpg", engine: "N57 / B57 3.0 Дизель", title: "Проворот вкладышей и цепи", problem: "Металлический шелест цепей ГРМ сзади мотора, стружка в масляном фильтре.", solution: "Замена цепей ГРМ, ревизия вкладышей и маслонасоса." }
+      ]
+    },
+	"vag": {
+      brandName: "Porsche / Volkswagen",
+      heroTitle: "Капитальный ремонт <span>двигателей Porsche и VW</span>",
+      heroSubtitle: "Специализация: Cayenne, Panamera, Touareg, Amarok. Устраняем задиры бензиновых V8 и стружку в дизелях TDI.",
+      bgImage: "images/vag/hero-vag.jpg",
+      accent: "#dc2626", // Фирменный красный
+      cards: [
+        { img: "images/vag/card-vag-v8.jpg", engine: "Бензиновые V8 (3.0 / 4.8)", title: "Задиры в цилиндрах", problem: "Износ алюсилового покрытия, огромный расход масла, стук в двигателе на холодную.", solution: "Качественная гильзовка чугунными гильзами, замена поршневой группы." },
+        { img: "images/vag/card-vag-tdi.jpg", engine: "Дизели 2.0, 3.0, 4.2 TDI", title: "Стружка от ТНВД и цепи ГРМ", problem: "Износ топливного насоса гонит стружку во всю систему. Растяжение цепей ГРМ на пробегах от 150 тыс. км.", solution: "Замена комплекта ГРМ со снятием ДВС, промывка системы, замена ТНВД и форсунок." }
+      ]
+    },
+    "toyota": {
+      brandName: "Toyota / Lexus",
+      heroTitle: "Капитальный ремонт <span>двигателей Toyota и Lexus</span>",
+      heroSubtitle: "Специализация: Land Cruiser 200 (4.5 V8 D-4D) и LX450d. Решаем проблемы с льющими форсунками и прогаром поршней.",
+      bgImage: "images/toyota/hero-toyota.jpg",
+      accent: "#ef4444", 
+      cards: [
+        { img: "images/toyota/card-toyota-1vd.jpg", engine: "1VD-FTV (4.5 V8 D-4D)", title: "Прогар поршней и трещины коленвала", problem: "Льющие форсунки и забитый EGR приводят к локальному перегреву, прогару поршня и серьезным задирам.", solution: "Расточка и гильзовка блока, замена поршневой группы, стендовая проверка и ремонт форсунок." }
+      ]
+    },
+    "nissan": {
+      brandName: "Nissan Patrol",
+      heroTitle: "Капитальный ремонт <span>двигателей Nissan Patrol</span>",
+      heroSubtitle: "Специализация: 3.0 ZD30 (дизель) и 5.6 VK56 (бензин). Лечим перегревы и растяжение цепей.",
+      bgImage: "images/nissan/hero-nissan.jpg",
+      accent: "#ea580c", // Оранжево-красный
+      cards: [
+        { img: "images/nissan/card-nissan-zd30.jpg", engine: "3.0 ZD30 (Дизель)", title: "Перегрев и трещины ГБЦ", problem: "Конструктивная склонность к перегреву приводит к образованию микротрещин в головке блока цилиндров.", solution: "Замена или сложный ремонт ГБЦ, полная ревизия системы охлаждения." },
+        { img: "images/nissan/card-nissan-vk56.jpg", engine: "5.6 VK56 (Бензин)", title: "Растяжение цепей ГРМ и задиры", problem: "Раннее вытягивание цепей, износ ТНВД. Пыль от разрушающихся катализаторов затягивает обратно в цилиндры.", solution: "Замена комплекта ГРМ, удаление катализаторов, гильзовка блока (при наличии задиров)." }
+      ]
+    },
+    "ford": {
+      brandName: "Ford F-150",
+      heroTitle: "Капитальный ремонт <span>двигателей Ford F-150</span>",
+      heroSubtitle: "Специализация: 3.5 EcoBoost, 5.0 Coyote, 3.0 PowerStroke. Профильный ремонт американских тяжеловесов.",
+      bgImage: "images/ford/hero-ford.jpg",
+      accent: "#2563eb", 
+      cards: [
+        { img: "images/ford/card-ford-ecoboost.jpg", engine: "3.5 EcoBoost", title: "Стук муфт и растяжение цепей", problem: "Грохот фазовращателей при холодном запуске, вытягивание цепи ГРМ, сильное падение мощности.", solution: "Замена цепей и муфт фазорегуляторов на модернизированные версии." },
+        { img: "images/ford/card-ford-coyote.jpg", engine: "5.0 Coyote V8", title: "Дикий жор масла", problem: "Залегание поршневых колец из-за несвоевременной замены масла или локальных перегревов.", solution: "Разборка ДВС, замена поршневых колец, раскоксовка, полная ревизия ГБЦ." }
+      ]
+    },
+    "volvo": {
+      brandName: "Volvo",
+      heroTitle: "Капитальный ремонт <span>двигателей Volvo</span>",
+      heroSubtitle: "Специализация: D5 2.4 (5 цилиндров) и Drive-E 2.0 (D4/D5). Устраняем последствия обрыва ремней и вой балансиров.",
+      bgImage: "images/volvo/hero-volvo.jpg",
+      accent: "#0ea5e9", // Голубой
+      cards: [
+        { img: "images/volvo/card-volvo-d5.jpg", engine: "D5 2.4 (5 цилиндров)", title: "Обрыв ремня навесного оборудования", problem: "Изношенный ручейковый ремень рвется, его куски затягивает под ремень ГРМ, что приводит к загибу клапанов.", solution: "Капитальный ремонт ГБЦ, замена клапанов, установка полного комплекта новых ремней." },
+        { img: "images/volvo/card-volvo-drive-e.jpg", engine: "Drive-E 2.0 D4/D5", title: "Вой балансирных валов", problem: "Критический износ подшипников балансирных валов вызывает сильный гул и вой со стороны мотора.", solution: "Замена балансирных валов в сборе (или подшипников) со снятием масляного поддона." }
+      ]
+    },
+    "default": {
+      brandName: "Премиум Авто",
+      heroTitle: "Капитальный ремонт <span>дизельных автомобильных двигателей</span>",
+      heroSubtitle: "Гильзовка и ремонт ДВС с официальным гарантийным сроком. Организуем доставку авто в сервис.",
+      bgImage: "images/hero-bg.jpg",
+      accent: "#f5a623",
+      cards: [] 
+    }
+  };
+
+  // --- 2. ЛОГИКА ПОДМЕНЫ ---
+  document.addEventListener("DOMContentLoaded", () => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const currentBrand = urlParams.get('brand') || 'default';
+    const data = brandData[currentBrand] || brandData['default'];
+
+    document.querySelector('.hero-text h2').innerHTML = data.heroTitle;
+    document.querySelector('.hero-text p').innerText = data.heroSubtitle;
+    document.querySelector('.hero').style.backgroundImage = `linear-gradient(rgba(10, 14, 26, 0.7), rgba(10, 14, 26, 0.9)), url('${data.bgImage}')`;
+    document.documentElement.style.setProperty('--accent', data.accent);
+
+    const grid = document.getElementById('services-grid');
+    if (data.cards.length > 0) {
+      grid.innerHTML = data.cards.map(card => `
+        <div class="service-card">
+          <img src="${card.img}" alt="${card.engine}">
+          <div class="service-card-content">
+            <span class="brand">${data.brandName}</span>
+            <div class="engine">${card.engine}</div>
+            <h3>${card.title}</h3>
+            <p class="problem">${card.problem}</p>
+            <div class="solution-label">Решение:</div>
+            <p class="solution">${card.solution}</p>
+          </div>
+        </div>
+      `).join('');
+    } else {
+      document.getElementById('services').style.display = 'none';
+    }
+
+    if(currentBrand !== 'default') {
+      const option = Array.from(document.querySelectorAll('.quiz-option')).find(el => el.dataset.value.toLowerCase().includes(currentBrand));
+      if(option) {
+         option.click();
+         nextStep(1); 
+      }
+    }
+  });
+
+  // --- 3. СКРИПТЫ КВИЗА ---
   const quizData = {};
   let currentStep = 1;
   
