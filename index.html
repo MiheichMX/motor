@@ -1173,11 +1173,16 @@
     }
 
     if(currentBrand !== 'default') {
-      const option = Array.from(document.querySelectorAll('.quiz-option')).find(el => el.dataset.value.toLowerCase().includes(currentBrand));
-      if(option) {
-         option.click();
-         nextStep(1); 
-      }
+      // Записываем марку сразу в память квиза из нашего словаря (например, "Ford F-150")
+      quizData['step1'] = data.brandName; 
+      
+      // Жестко перекидываем клиента на Шаг 2, скрывая Шаг 1
+      document.querySelector('.quiz-step[data-step="1"]').classList.remove('active');
+      currentStep = 2;
+      document.querySelector('.quiz-step[data-step="2"]').classList.add('active');
+      
+      // Обновляем визуальные кружочки прогресса
+      updateProgress();
     }
   });
 
