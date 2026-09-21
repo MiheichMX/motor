@@ -171,12 +171,6 @@
     opacity: 0.3;
   }
   
-  .hero-suv {
-    max-width: 800px;
-    margin: 0 auto 40px;
-    display: block;
-  }
-  
   .hero-text .badge {
     display: inline-block;
     background: rgba(245, 166, 35, 0.15);
@@ -330,13 +324,7 @@
     color: var(--text-secondary);
   }
   
-  .progress-step.active {
-    background: var(--accent);
-    border-color: var(--accent);
-    color: var(--bg-primary);
-  }
-  
-  .progress-step.done {
+  .progress-step.active, .progress-step.done {
     background: var(--accent);
     border-color: var(--accent);
     color: var(--bg-primary);
@@ -744,7 +732,6 @@
     margin-bottom: 25px;
   }
   
-  /* RESPONSIVE */
   @media (max-width: 768px) {
     .hero-text h2 { font-size: 32px; }
     .contacts-grid { grid-template-columns: 1fr; }
@@ -757,16 +744,16 @@
   }
   
   #services .section-title,
-#trust .section-title,
-#contacts .section-title {
+  #trust .section-title,
+  #contacts .section-title {
     text-align: left;
-}
+  }
 
-#services .section-title .accent-line,
-#trust .section-title .accent-line,
-#contacts .section-title .accent-line {
+  #services .section-title .accent-line,
+  #trust .section-title .accent-line,
+  #contacts .section-title .accent-line {
     margin: 15px 0;
-}
+  }
 </style>
 </head>
 <body>
@@ -802,7 +789,7 @@
     <div class="hero-text">
       <span class="badge">Узкая специализация на дизельных двигателях</span>
       <h2>Капитальный ремонт <span>дизельных автомобильных двигателей</span></h2>
-      <p>Гильзовка и ремонт ДВС с официальным гарантийным сроком. Специализация: Land Rover, Jaguar, BMW, Mercedes-Benz, Porsche, Toyota/Lexus, Volkswagen (Touareg, Amarok). Устраняем задиры, провернутые вкладыши и обрывы цепей ГРМ. Организуем доставку авто в сервис (БЕСПЛАТНО при ремонте).</p>
+      <p>Профессиональная гильзовка и ремонт ДВС с официальным гарантийным сроком. Специализация: Land Rover, Jaguar, BMW, Mercedes-Benz, Porsche, Toyota/Lexus, Volkswagen (Touareg, Amarok). Устраняем задиры, провернутые вкладыши и обрывы цепей ГРМ. Организуем доставку агрегатов и авто в сервис.</p>
       <div class="hero-actions">
         <a href="#quiz-block" class="btn btn-large">Рассчитать смету ремонта</a>
         <a href="#services" class="btn btn-outline btn-large">Частые поломки ДВС</a>
@@ -885,11 +872,11 @@
             <div class="quiz-option" data-value="Двигатель заклинил">
               <div class="opt-title">Двигатель заклинил / Не прокручивается</div>
             </div>
-            <div class="quiz-option" data-value="Жор масла / Задиры">
-              <div class="opt-title">Жор масла / Задиры / Дымит выхлоп</div>
+            <div class="quiz-option" data-value="Сизый дым / Жор масла">
+              <div class="opt-title">Сизый дым из выхлопной трубы / Жор масла</div>
             </div>
             <div class="quiz-option" data-value="Гремит цепь ГРМ">
-              <div class="opt-title">Гремит цепь ГРМ / Замена цепей ГРМ</div>
+              <div class="opt-title">Гремит цепь ГРМ / Требуется замена цепей</div>
             </div>
           </div>
           <div class="quiz-nav">
@@ -922,10 +909,9 @@
     <div class="section-title">
       <h2 id="services-title">С чем к нам приезжают</h2>
       <div class="accent-line"></div>
-      <p id="services-subtitle">Типовые неисправности и их решение. Знаем все заводские болячки. Не просто перебираем запчасти, а модернизируем узлы.</p>
+      <p id="services-subtitle">Знаем о большинстве заводских болячек и конструктивных упущениях с точки зрения реальной эксплуатации. Ищем первопричину, чтобы исключить повторные поломки, а не просто меняем агрегаты за деньги клиента.</p>
     </div>
     
-    <!-- Сюда наш умный скрипт будет сам подставлять нужные карточки -->
     <div class="services-grid" id="services-grid"></div>
   </div>
 </section>
@@ -936,24 +922,24 @@
     <div class="section-title">
       <h2>Почему нам доверяют</h2>
       <div class="accent-line"></div>
-      <p>Прозрачный процесс ремонта без сюрпризов</p>
+      <p>Прозрачный процесс ремонта без скрытых платежей</p>
     </div>
     
     <div class="trust-grid">
       <div class="trust-card">
         <div class="trust-number">1</div>
-        <h3>Дефектовка при вас</h3>
-        <p>Вы можете лично присутствовать при разборке двигателя или получать фото/видеоотчеты в WhatsApp.</p>
+        <h3>Прозрачная дефектовка</h3>
+        <p>Вы можете лично присутствовать при дефектовке агрегата или получать детальные фото/видеоотчеты в WhatsApp.</p>
       </div>
       <div class="trust-card">
         <div class="trust-number">2</div>
-        <h3>Фиксация в Договоре</h3>
-        <p>После дефектовки формируем смету. Итоговая стоимость фиксируется в договоре и не меняется.</p>
+        <h3>Честное ценообразование</h3>
+        <p>Формируем подробную смету до начала работ. Стоимость запчастей зависит только от рынка и логистики, без скрытых накруток.</p>
       </div>
       <div class="trust-card">
         <div class="trust-number">3</div>
-        <h3>Усиленные детали</h3>
-        <p>Используем замковые вкладыши, модернизированные маслонасосы и цепи ГРМ последнего поколения.</p>
+        <h3>Качественные комплектующие</h3>
+        <p>Используем только проверенные детали и надежные узлы, чтобы гарантировать долгую работу ДВС после капремонта.</p>
       </div>
       <div class="trust-card">
         <div class="trust-number">4</div>
@@ -974,12 +960,12 @@
     
     <div class="contacts-grid">
       <div class="contact-info">
-        <h3>Моторный Центр Истра</h3>
-        <p>Специализированный техцентр по ремонту и гильзовке дизельных двигателей автомобилей Land Rover, Jaguar, BMW, Mercedes-Benz, Porsche, Toyota и Volkswagen (Touareg, Amarok) в Истринском районе.</p>
+        <h3>Моторный Центр Истра (Дизельков.рф)</h3>
+        <p>Специализированный техцентр по капитальному ремонту и гильзовке двигателей автомобилей Land Rover, BMW, Mercedes-Benz, Porsche, Toyota и VAG.</p>
+        <p>Работаем с клиентами из Истры, Зеленограда, Рузы, Волоколамска, Солнечногорска, а также принимаем ДВС из других регионов РФ.</p>
         
-        <div class="label">Наш адрес в Истре</div>
-        <p>Московская область, г. Истра, ул. Московская, д. 42</p>
-        <p>Удобный заезд с Новой Риги и Волоколамского шоссе.</p>
+        <div class="label">Наш адрес</div>
+        <p>Московская область, г. Истра, д. Трусово, территория ГСК (Дизельков.рф)</p>
         <p><strong>Режим работы:</strong> Ежедневно 9:00 - 21:00</p>
         
         <div class="label">Связь с мастером</div>
@@ -989,9 +975,9 @@
       
       <div class="contact-map">
         <div class="map-icon">📍</div>
-        <h3>Удобный заезд</h3>
-        <p style="color: var(--text-secondary); margin-top: 10px;">Новая Рига и Волоколамское шоссе</p>
-        <p style="color: var(--text-secondary);">г. Истра, ул. Московская, д. 42</p>
+        <h3>Ждем вас</h3>
+        <p style="color: var(--text-secondary); margin-top: 10px;">Дизельков.рф на территории ГСК</p>
+        <p style="color: var(--text-secondary);">Московская обл., г. Истра, д. Трусово</p>
       </div>
     </div>
   </div>
@@ -1008,7 +994,7 @@
             <h1 style="font-size: 16px;">Моторный Центр Истра</h1>
           </div>
         </div>
-        <p>Специализированный техцентр по ремонту и гильзовке дизельных двигателей автомобилей Land Rover, Jaguar, BMW, Mercedes-Benz, Porsche, Toyota и Volkswagen (Touareg, Amarok) в Истринском районе.</p>
+        <p>Дизельков.рф — техцентр по ремонту и гильзовке двигателей премиум-класса. Принимаем в работу ДВС из Истры, Зеленограда, Рузы, Волоколамска, Солнечногорска и других регионов РФ.</p>
       </div>
       <div class="footer-col">
         <h4>Меню</h4>
@@ -1021,7 +1007,7 @@
         <h4>Контакты</h4>
         <a href="tel:+74950000000">+7 (495) 000-00-00</a>
         <a href="https://wa.me/74950000000">WhatsApp</a>
-        <p>г. Истра, ул. Московская, д. 42</p>
+        <p>г. Истра, д. Трусово, ГСК</p>
       </div>
     </div>
     <div class="footer-bottom">
@@ -1050,7 +1036,7 @@
       bgImage: "images/jlr/hero-jlr.jpg",
       accent: "#059669",
       cards: [
-        { img: "images/jlr/card-jlr-tdv6.jpg", engine: "2.7 & 3.0 TDV6/SDV6", title: "Проворот вкладышей и поломка коленвала", problem: "Из-за масляного голодания вал заклинивает, проворачивает вкладыши и ломает коленвал.", solution: "Установка коленвала, ремонт постели блока, замковые вкладыши." },
+        { img: "images/jlr/card-jlr-tdv6.jpg", engine: "2.7 & 3.0 TDV6/SDV6", title: "Проворот вкладышей и поломка коленвала", problem: "Из-за масляного голодания вал заклинивает, проворачивает вкладыши и ломает коленвал.", solution: "Установка коленвала, ремонт постели блока, качественные вкладыши." },
         { img: "images/jlr/card-jlr-v8.jpg", engine: "5.0 V8 Supercharged", title: "Растяжение цепей ГРМ и носок компрессора", problem: "Натяжители изнашиваются, цепь начинает греметь. При перескоке гнет клапана.", solution: "Замена ГРМ комплектом последнего поколения, ревизия муфт VVT." },
         { img: "images/jlr/card-jlr-ingenium.jpg", engine: "2.0 Ingenium", title: "Обрыв цепи ГРМ (сзади со стороны КПП)", problem: "Цепи вытягиваются уже на 70–90 тыс. км. Появляется гул балансирных валов.", solution: "Замена привода ГРМ со съемом ДВС/КПП, замена балансирных валов." }
       ]
@@ -1058,11 +1044,11 @@
     "mercedes": {
       brandName: "Mercedes-Benz",
       heroTitle: "Капитальный ремонт <span>двигателей Mercedes-Benz</span>",
-      heroSubtitle: "Специализация: M278, M157, M274, OM642, OM651. Профессиональная гильзовка и устранение задиров.",
+      heroSubtitle: "Специализация: M278, M157, M274, OM642, OM651. Профессиональная гильзовка и устранение расхода масла.",
       bgImage: "images/mercedes/hero-mercedes.jpg",
       accent: "#3b82f6",
       cards: [
-        { img: "images/mercedes/card-mb-v8.jpg", engine: "M278 4.7 V8 / M157 5.5 V8", title: "Задиры в цилиндрах", problem: "Разрушается алюсиловое покрытие стенок цилиндров, двигатель начинает стучать, жрет масло.", solution: "Гильзовка чугунными гильзами, новые поршни, замена муфт." },
+        { img: "images/mercedes/card-mb-v8.jpg", engine: "M278 4.7 V8 / M157 5.5 V8", title: "Задиры в цилиндрах", problem: "Разрушается алюсиловое покрытие стенок цилиндров, двигатель начинает стучать, сизый дым.", solution: "Качественная гильзовка чугунными гильзами, новые поршни, замена муфт." },
         { img: "images/mercedes/card-mb-m274.jpg", engine: "M274 2.0 Бензин", title: "Стук фазорегуляторов", problem: "Треск при запуске на холодную, износ звезд и растяжение цепи ГРМ.", solution: "Замена комплекта ГРМ и муфт распредвалов." },
         { img: "images/mercedes/card-mb-diesel.jpg", engine: "OM642 / OM651 Дизель", title: "Вихревые заслонки и форсунки", problem: "Падение мощности, разрушение заслонок впускного коллектора, проблемы с пьезофорсунками.", solution: "Ревизия коллектора, удаление/замена заслонок, ремонт топливной." }
       ]
@@ -1070,72 +1056,18 @@
     "bmw": {
       brandName: "BMW",
       heroTitle: "Капитальный ремонт <span>двигателей BMW</span>",
-      heroSubtitle: "Специализация: N63, S63, N57, B57, N20, B48. Устраняем задиры, жор масла и проблемы с цепями ГРМ.",
+      heroSubtitle: "Специализация: N63, S63, N57, B57, N20, B48. Устраняем жор масла, сизый дым и проблемы с цепями ГРМ.",
       bgImage: "images/bmw/hero-bmw.jpg",
       accent: "#2563eb", 
       cards: [
-        { img: "images/bmw/card-bmw-v8.jpg", engine: "N63 / S63 4.4 V8", title: "Жор масла и перегрев", problem: "Горячий развал блока разрушает маслосъемные колпачки. Начинается расход масла и задиры.", solution: "Капитальный ремонт, гильзовка, холодный термостат." },
-        { img: "images/bmw/card-bmw-diesel.jpg", engine: "N57 / B57 3.0 Дизель", title: "Проворот вкладышей и цепи ГРМ", problem: "Металлический шелест цепей ГРМ сзади двигателя, стружка в масляном фильтре.", solution: "Замена цепей ГРМ, ревизия вкладышей и маслонасоса." }
-      ]
-    },
-	"vag": {
-      brandName: "Porsche / Volkswagen",
-      heroTitle: "Капитальный ремонт <span>двигателей Porsche и VW</span>",
-      heroSubtitle: "Специализация: Cayenne, Panamera, Touareg, Amarok. Устраняем задиры бензиновых V8 и стружку в дизелях TDI.",
-      bgImage: "images/vag/hero-vag.jpg",
-      accent: "#dc2626",
-      cards: [
-        { img: "images/vag/card-vag-v8.jpg", engine: "Бензиновые V8 (3.0 / 4.8)", title: "Задиры в цилиндрах", problem: "Износ алюсилового покрытия, огромный расход масла, стук в двигателе на холодную.", solution: "Качественная гильзовка чугунными гильзами, замена поршневой группы." },
-        { img: "images/vag/card-vag-tdi.jpg", engine: "Дизели 2.0, 3.0, 4.2 TDI", title: "Стружка от ТНВД и цепи ГРМ", problem: "Износ топливного насоса гонит стружку во всю систему. Растяжение цепей ГРМ на пробегах от 150 тыс. км.", solution: "Замена комплекта ГРМ со снятием ДВС, промывка системы, замена ТНВД и форсунок." }
-      ]
-    },
-    "toyota": {
-      brandName: "Toyota / Lexus",
-      heroTitle: "Капитальный ремонт <span>двигателей Toyota и Lexus</span>",
-      heroSubtitle: "Специализация: Land Cruiser 200 (4.5 V8 D-4D) и LX450d. Решаем проблемы с льющими форсунками и прогаром поршней.",
-      bgImage: "images/toyota/hero-toyota.jpg",
-      accent: "#ef4444", 
-      cards: [
-        { img: "images/toyota/card-toyota-1vd.jpg", engine: "1VD-FTV (4.5 V8 D-4D)", title: "Прогар поршней и трещины коленвала", problem: "Льющие форсунки и забитый EGR приводят к локальному перегреву, прогару поршня и серьезным задирам.", solution: "Расточка и гильзовка блока, замена поршневой группы, стендовая проверка и ремонт форсунок." }
-      ]
-    },
-    "nissan": {
-      brandName: "Nissan Patrol",
-      heroTitle: "Капитальный ремонт <span>двигателей Nissan Patrol</span>",
-      heroSubtitle: "Специализация: 3.0 ZD30 (дизель) и 5.6 VK56 (бензин). Лечим перегревы и растяжение цепей ГРМ.",
-      bgImage: "images/nissan/hero-nissan.jpg",
-      accent: "#ea580c",
-      cards: [
-        { img: "images/nissan/card-nissan-zd30.jpg", engine: "3.0 ZD30 (Дизель)", title: "Перегрев и трещины ГБЦ", problem: "Конструктивная склонность к перегреву приводит к образованию микротрещин в головке блока цилиндров.", solution: "Замена или сложный ремонт ГБЦ, полная ревизия системы охлаждения." },
-        { img: "images/nissan/card-nissan-vk56.jpg", engine: "5.6 VK56 (Бензин)", title: "Растяжение цепей ГРМ и задиры", problem: "Раннее вытягивание цепей ГРМ, износ ТНВД. Пыль от разрушающихся катализаторов затягивает обратно в цилиндры.", solution: "Замена комплекта ГРМ, удаление катализаторов, гильзовка блока (при наличии задиров)." }
-      ]
-    },
-    "ford": {
-      brandName: "Ford F-150",
-      heroTitle: "Капитальный ремонт <span>двигателей Ford F-150</span>",
-      heroSubtitle: "Специализация: 3.5 EcoBoost, 5.0 Coyote, 3.0 PowerStroke. Профильный ремонт американских тяжеловесов.",
-      bgImage: "images/ford/hero-ford.jpg",
-      accent: "#2563eb", 
-      cards: [
-        { img: "images/ford/card-ford-ecoboost.jpg", engine: "3.5 EcoBoost", title: "Стук муфт и растяжение цепей ГРМ", problem: "Грохот фазовращателей при холодном запуске, вытягивание цепи ГРМ, сильное падение мощности.", solution: "Замена цепей ГРМ и муфт фазорегуляторов на модернизированные версии." },
-        { img: "images/ford/card-ford-coyote.jpg", engine: "5.0 Coyote V8", title: "Дикий жор масла", problem: "Залегание поршневых колец из-за несвоевременной замены масла или локальных перегревов.", solution: "Разборка ДВС, замена поршневых колец, раскоксовка, полная ревизия ГБЦ." }
-      ]
-    },
-    "volvo": {
-      brandName: "Volvo",
-      heroTitle: "Капитальный ремонт <span>двигателей Volvo</span>",
-      heroSubtitle: "Специализация: D5 2.4 (5 цилиндров) и Drive-E 2.0 (D4/D5). Устраняем последствия обрыва ремней и вой балансиров.",
-      bgImage: "images/volvo/hero-volvo.jpg",
-      accent: "#0ea5e9",
-      cards: [
-        { img: "images/volvo/card-volvo-d5.jpg", engine: "D5 2.4 (5 цилиндров)", title: "Обрыв ремня навесного оборудования", problem: "Изношенный ручейковый ремень рвется, его куски затягивает под ремень ГРМ, что приводит к загибу клапанов.", solution: "Капитальный ремонт ГБЦ, замена клапанов, установка полного комплекта новых ремней." },
-        { img: "images/volvo/card-volvo-drive-e.jpg", engine: "Drive-E 2.0 D4/D5", title: "Вой балансирных валов", problem: "Критический износ подшипников балансирных валов вызывает сильный гул и вой со стороны двигателя.", solution: "Замена балансирных валов в сборе (или подшипников) со снятием масляного поддона." }
+        { img: "images/bmw/card-bmw-v8.jpg", engine: "N63 / S63 4.4 V8", title: "Жор масла и перегрев", problem: "Долгосрочные температурные нагрузки в развале блока разрушают сальники и маслосъемные колпачки. Начинается жор масла и сильный дым.", solution: "Капитальный ремонт, гильзовка ДВС, замена маслосъемных колпачков." },
+        { img: "images/bmw/card-bmw-diesel.jpg", engine: "N57 / B57 3.0 Дизель", title: "Проворот вкладышей / Растяжение цепей ГРМ", problem: "Металлический шелест цепей ГРМ, стружка в масляном фильтре из-за износа вкладышей.", solution: "Замена цепей ГРМ, ревизия вкладышей и маслонасоса." }
       ]
     },
     "default": {
       brandName: "Премиум Авто",
       heroTitle: "Капитальный ремонт <span>дизельных автомобильных двигателей</span>",
-      heroSubtitle: "Гильзовка и ремонт ДВС с официальным гарантийным сроком. Организуем доставку авто в сервис.",
+      heroSubtitle: "Гильзовка и ремонт ДВС с официальным гарантийным сроком. Организуем доставку агрегатов в сервис.",
       bgImage: "images/hero-bg.jpg",
       accent: "#f5a623",
       cards: [] 
@@ -1173,15 +1105,10 @@
     }
 
     if(currentBrand !== 'default') {
-      // Записываем марку сразу в память квиза из нашего словаря (например, "Ford F-150")
       quizData['step1'] = data.brandName; 
-      
-      // Жестко перекидываем клиента на Шаг 2, скрывая Шаг 1
       document.querySelector('.quiz-step[data-step="1"]').classList.remove('active');
       currentStep = 2;
       document.querySelector('.quiz-step[data-step="2"]').classList.add('active');
-      
-      // Обновляем визуальные кружочки прогресса
       updateProgress();
     }
   });
